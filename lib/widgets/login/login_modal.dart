@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../register.dart';
+
 class LoginModal extends StatefulWidget {
   const LoginModal(
       {super.key,
@@ -119,6 +121,20 @@ class _LoginModalState extends State<LoginModal> {
                         color: Colors.white,
                       ),
                     ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (ctx) => const RegisterAccount(),
+                        ),
+                        (route) => false);
+                  },
+                  child: const Text(
+                    'Register Account',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ],

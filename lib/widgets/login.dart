@@ -3,7 +3,6 @@
 import 'package:course_udemy_expense_tracker_app/models/login.dart';
 import 'package:course_udemy_expense_tracker_app/widgets/expenses.dart';
 import 'package:course_udemy_expense_tracker_app/widgets/login/login_modal.dart';
-import 'package:course_udemy_expense_tracker_app/widgets/register.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../functions/service/login/login.dart';
@@ -53,7 +52,6 @@ class _LoginState extends State<Login> {
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  _showRegisterDialog();
                 },
                 child: const Icon(Icons.close),
               ),
@@ -62,37 +60,6 @@ class _LoginState extends State<Login> {
         },
       );
     }
-  }
-
-  void _showRegisterDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Don\'t have an account?'),
-          content: const Text('Want to create a new account?'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Icon(Icons.close),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (ctx) => const RegisterAccount(),
-                    ),
-                    (route) => false);
-              },
-              child: const Text('Yes'),
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override
@@ -109,7 +76,7 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SizedBox(
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height + 20,
           child: Stack(
             children: [
               Positioned.fill(
