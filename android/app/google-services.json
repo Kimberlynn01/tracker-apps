@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "552509546567",
+    "project_id": "trackerapps-773c1",
+    "storage_bucket": "trackerapps-773c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552509546567:android:9c896134772c163e5c9162",
+        "android_client_info": {
+          "package_name": "com.example.course_udemy_expense_tracker_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHyD83tfh8MeXyNGRKe76VDgK1gCm9IKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
