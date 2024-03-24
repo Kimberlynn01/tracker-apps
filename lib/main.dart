@@ -106,7 +106,7 @@ void main() async {
           ),
         ),
         hintColor: Colors.black,
-        listTileTheme: ListTileThemeData().copyWith(
+        listTileTheme: const ListTileThemeData().copyWith(
           iconColor: Colors.white,
           textColor: Colors.white,
         ),

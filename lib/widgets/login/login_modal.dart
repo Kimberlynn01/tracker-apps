@@ -17,6 +17,14 @@ class LoginModal extends StatefulWidget {
 }
 
 class _LoginModalState extends State<LoginModal> {
+  bool isPasswordVisible = false;
+
+  void togglePasswordVisibility() {
+    setState(() {
+      isPasswordVisible = !isPasswordVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -100,6 +108,18 @@ class _LoginModalState extends State<LoginModal> {
                   style: const TextStyle(color: Colors.white),
                   controller: widget.passwordController,
                   cursorColor: Colors.white,
+                  obscureText: !isPasswordVisible,
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      onPressed: togglePasswordVisibility,
+                      icon: Icon(
+                        isPasswordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

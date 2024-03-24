@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:course_udemy_expense_tracker_app/widgets/chart/chart.dart';
 import 'package:course_udemy_expense_tracker_app/widgets/expenses_list/expenses_list.dart';
 import 'package:course_udemy_expense_tracker_app/widgets/form_expenses.dart';
+import 'package:course_udemy_expense_tracker_app/widgets/settings.dart';
 import 'package:custom_pop_up_menu/custom_pop_up_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -156,6 +157,12 @@ class _ExpensesState extends State<Expenses> {
                         title: const Text('Settings'),
                         onTap: () {
                           _customPopupMenuController.hideMenu();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (ctx) => const Settings(),
+                            ),
+                          );
                         },
                       ),
                       ListTile(
